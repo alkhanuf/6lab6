@@ -34,11 +34,11 @@
             tbDirection = new TrackBar();
             lblDirection = new Label();
             tbGraviton = new TrackBar();
-            tbGraviton2 = new TrackBar();
+            tbColor = new TrackBar();
             ((System.ComponentModel.ISupportInitialize)picDisplay).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbDirection).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbGraviton).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)tbGraviton2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tbColor).BeginInit();
             SuspendLayout();
             // 
             // picDisplay
@@ -82,21 +82,21 @@
             tbGraviton.TabIndex = 3;
             tbGraviton.Scroll += tbGraviton_Scroll;
             // 
-            // tbGraviton2
+            // tbColor
             // 
-            tbGraviton2.Location = new Point(784, 152);
-            tbGraviton2.Maximum = 100;
-            tbGraviton2.Name = "tbGraviton2";
-            tbGraviton2.Size = new Size(259, 56);
-            tbGraviton2.TabIndex = 4;
-            tbGraviton2.Scroll += tbGraviton2_Scroll;
+            tbColor.Location = new Point(784, 152);
+            tbColor.Maximum = 150;
+            tbColor.Name = "tbColor";
+            tbColor.Size = new Size(259, 56);
+            tbColor.TabIndex = 4;
+            tbColor.Scroll += tbColor_Scroll;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1163, 637);
-            Controls.Add(tbGraviton2);
+            Controls.Add(tbColor);
             Controls.Add(tbGraviton);
             Controls.Add(lblDirection);
             Controls.Add(tbDirection);
@@ -106,7 +106,7 @@
             ((System.ComponentModel.ISupportInitialize)picDisplay).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbDirection).EndInit();
             ((System.ComponentModel.ISupportInitialize)tbGraviton).EndInit();
-            ((System.ComponentModel.ISupportInitialize)tbGraviton2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tbColor).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -118,6 +118,6 @@
         private TrackBar tbDirection;
         private Label lblDirection;
         private TrackBar tbGraviton;
-        private TrackBar tbGraviton2;
+        private TrackBar tbColor;
     }
 }

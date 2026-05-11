@@ -6,7 +6,7 @@ namespace _6lab6
         Emitter emitter;
 
         GravityPoint point1;
-        GravityPoint point2;
+        ColorPoint colorPoint;
         public Form1()
         {
             InitializeComponent();
@@ -33,14 +33,16 @@ namespace _6lab6
                 X = picDisplay.Width / 2 + 200,
                 Y = picDisplay.Height / 2,
             };
-            point2 = new GravityPoint
+
+            emitter.impactPoints.Add(point1);
+
+            colorPoint = new ColorPoint
             {
                 X = picDisplay.Width / 2 - 200,
                 Y = picDisplay.Height / 2,
             };
 
-            emitter.impactPoints.Add(point1);
-            emitter.impactPoints.Add(point2);
+            emitter.impactPoints.Add(colorPoint);
 
 
         }
@@ -66,9 +68,6 @@ namespace _6lab6
                 emitter.MousePositionY = e.Y;
             }
 
-            point2.X = e.X;
-            point2.Y = e.Y;
-
         }
 
         private void tbDirection_Scroll(object sender, EventArgs e)
@@ -82,9 +81,9 @@ namespace _6lab6
             point1.Power = tbGraviton.Value;
         }
 
-        private void tbGraviton2_Scroll(object sender, EventArgs e)
+        private void tbColor_Scroll(object sender, EventArgs e)
         {
-            point2.Power = tbGraviton2.Value;
+            colorPoint.Radius = tbColor.Value;
         }
     }
 }

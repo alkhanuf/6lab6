@@ -39,7 +39,6 @@ namespace _6lab6
 
             foreach (var particle in particles)
             {
-                particle.Life -= 1;
 
                 if (particle.Life <= 0)
                 {
@@ -54,18 +53,18 @@ namespace _6lab6
                 }
                 else
                 {
-                    particle.X += particle.SpeedX;
-                    particle.Y += particle.SpeedY;
-
-                    particle.Life -= 1;
                     foreach (var point in impactPoints)
                     {
                         point.ImpactParticle(particle);
                     }
 
+                    particle.X += particle.SpeedX;
+                    particle.Y += particle.SpeedY;
+
                     particle.SpeedX += GravitationX;
                     particle.SpeedY += GravitationY;
 
+                    particle.Life -= 1;
 
                 }
 
@@ -99,6 +98,12 @@ namespace _6lab6
 
             particle.X = X;
             particle.Y = Y;
+
+            if (particle is ParticleColorful colorParticle)
+            {
+                colorParticle.FromColor = ColorFrom;
+                colorParticle.ToColor = ColorTo;
+            }
 
             var direction = Direction
                 + (double)Particle.rand.Next(Spreading)
