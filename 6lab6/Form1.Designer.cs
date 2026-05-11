@@ -36,11 +36,12 @@
             // 
             // picDisplay
             // 
-            picDisplay.Location = new Point(3, 12);
+            picDisplay.Location = new Point(12, 12);
             picDisplay.Name = "picDisplay";
-            picDisplay.Size = new Size(792, 432);
+            picDisplay.Size = new Size(1194, 764);
             picDisplay.TabIndex = 0;
             picDisplay.TabStop = false;
+            picDisplay.MouseMove += picDisplay_MouseMove;
             // 
             // timer1
             // 
@@ -52,7 +53,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1218, 788);
             Controls.Add(picDisplay);
             Name = "Form1";
             Text = "Form1";
