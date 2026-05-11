@@ -109,4 +109,50 @@ namespace _6lab6
         }
 
     }
+
+    public class CounterPoint : IImpactPoint
+    {
+        public int Radius = 40;
+        public int Count = 0;
+
+        public override void ImpactParticle(Particle particle)
+        {
+            float gX = X - particle.X;
+            float gY = Y - particle.Y;
+            double r = Math.Sqrt(gX * gX + gY * gY);
+
+            if (r + particle.Radius < Radius)
+            {
+                particle.Life = 0;
+                Count++;
+            }
+        }
+
+        public override void Render(Graphics g)
+        {
+
+
+            g.DrawEllipse(
+                new Pen(Color.Orange),
+                X - Radius,
+                Y - Radius,
+                Radius * 2,
+                Radius * 2
+                );
+
+            var stringFormat = new StringFormat();
+            stringFormat.Alignment = StringAlignment.Center;
+            stringFormat.LineAlignment = StringAlignment.Center;
+
+            g.DrawString(
+                $"Счет: {Count}",
+                new Font("Verdana", 10),
+                new SolidBrush(Color.Black),
+                X,
+                Y,
+                stringFormat
+            );
+        }
+    }
+
 }

@@ -48,6 +48,7 @@
             picDisplay.Size = new Size(754, 613);
             picDisplay.TabIndex = 0;
             picDisplay.TabStop = false;
+            picDisplay.MouseClick += picDisplay_MouseClick;
             picDisplay.MouseMove += picDisplay_MouseMove;
             // 
             // timer1

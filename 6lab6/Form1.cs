@@ -7,6 +7,7 @@ namespace _6lab6
 
         GravityPoint point1;
         ColorPoint colorPoint;
+
         public Form1()
         {
             InitializeComponent();
@@ -84,6 +85,17 @@ namespace _6lab6
         private void tbColor_Scroll(object sender, EventArgs e)
         {
             colorPoint.Radius = tbColor.Value;
+        }
+
+        private void picDisplay_MouseClick(object sender, MouseEventArgs e)
+        {
+            var counter = new CounterPoint
+            {
+                X = e.X,
+                Y = e.Y,
+            };
+
+            emitter.impactPoints.Add(counter);
         }
     }
 }
