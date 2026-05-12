@@ -13,7 +13,7 @@ namespace _6lab6
         public int MousePositionY;
 
         public float GravitationX = 0;
-        public float GravitationY = 0;
+        public float GravitationY = 1;
 
         public int ParticlesCount = 500;
 
@@ -42,7 +42,7 @@ namespace _6lab6
 
                 if (particle.Life <= 0)
                 {
-                    ResetParticle(particle);
+                    
 
                     if (particlesToCreate > 0)
                     {

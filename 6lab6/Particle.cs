@@ -78,6 +78,4 @@ namespace _6lab6
         }
     }
 
-
-
 }

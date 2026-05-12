@@ -7,6 +7,7 @@ namespace _6lab6
 
         GravityPoint point1;
         ColorPoint colorPoint;
+        BoundPoint boundPoint;
 
         public Form1()
         {
@@ -45,6 +46,13 @@ namespace _6lab6
 
             emitter.impactPoints.Add(colorPoint);
 
+            boundPoint = new BoundPoint 
+            {
+                X = picDisplay.Width / 2,
+                Y = picDisplay.Height / 2,
+            };
+            emitter.impactPoints.Add(boundPoint);
+
 
         }
 
@@ -68,6 +76,9 @@ namespace _6lab6
                 emitter.MousePositionX = e.X;
                 emitter.MousePositionY = e.Y;
             }
+
+            boundPoint.X = e.X;
+            boundPoint.Y = e.Y;
 
         }
 
